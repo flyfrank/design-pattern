@@ -1,0 +1,29 @@
+@startuml
+class LoggerFactory {
++ {static} Logger createLogger(String args);
+}
+
+class Client
+
+interface Logger {
++ void writeLog()
+}
+class FileLogger {
++ void writeLog()
+}
+
+class DatabaseLogger {
++ writeLog()
+}
+
+Client --> Logger
+Client --> LoggerFactory
+
+FileLogger --|> Logger
+DatabaseLogger --|> Logger
+
+
+LoggerFactory "create" --> FileLogger
+LoggerFactory "create" --> DatabaseLogger
+
+@enduml
