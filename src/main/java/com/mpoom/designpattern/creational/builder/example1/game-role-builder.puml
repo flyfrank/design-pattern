@@ -1,0 +1,21 @@
+@startuml
+
+class Actor {
+- String type
+- String sex
+- String face
+- String costume
+- String hairStyle
+}
+
+abstract class ActorBuilder {
+- Actor actor = new Actor()
++ void buildType()
++ void buildSex()
++ void buildFace()
++ void buildCostume()
++ void buildHairStyle()
++ Actor createActor()
+}
+
+@enduml
